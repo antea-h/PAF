@@ -1,20 +1,19 @@
-from matplotlib import pyplot as plt
-def jednadzba_pravca (k, l):
-  return("y = {k}x + {l}")
+import matplotlib.pyplot as plt
+def jednadzba_pravca(x1,y1,x2,y2,znak):
+  x_koordinate = [x1,x2]
+  y_koordinate = [y1,y2]
+  plt.plot(x_koordinate,y_koordinate)
+
+  if znak == 0:
+   plt.show()
+  elif znak == 1:
+   naziv = input("Unesite naziv slike: ")
+   plt.savefig(f"{naziv}.pdf")
 
 
-x1 = float(input("Unesi x koordinatu prve točke: "))
-y1 = float(input("Unesi y koordinatu prve točke: "))
-x2 = float(input("Unesi x koordinatu druge točke: "))
-y2 = float(input("Unesi y koordinatu druge točke: "))
-
-k = (y2-y1)/(x2-x1)
-l = k*x1+y1
+jednadzba_pravca(2,1,4,-2,1)
 
 
-jednadzba_pravca(k,l)
 
 
-plt.plot()
 
-plt.show()
